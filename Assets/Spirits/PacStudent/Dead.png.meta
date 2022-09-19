@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c59d4d7e1f9e8d841b586e66b6afd486
+guid: 12e07fd429ad4ac40ae40346ab6e067d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,7 +106,70 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ScaredGhost_0
+      name: Dead_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf67f6706578f814d806a626bf178340
+      internalID: 2021832579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1181007e8919f244fa7c0a97492bdee2
+      internalID: 1646078146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc02644c4c6ee3f408d02e08885c9da2
+      internalID: 1040877143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_3
       rect:
         serializedVersion: 2
         x: 0
@@ -120,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c2f7e2205bf98741a650eb19f00878e
-      internalID: -650423740
+      spriteID: ad399ab153da66149a1ef3d30a7c0ceb
+      internalID: 1574405386
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ScaredGhost_1
+      name: Dead_4
       rect:
         serializedVersion: 2
         x: 32
@@ -141,8 +204,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0b39668d8c15cb4f9be9aa3e093ae70
-      internalID: -593743269
+      spriteID: 8060dd7686514a5489737575382a4aca
+      internalID: -1859146437
       vertices: []
       indices: 
       edges: []
@@ -158,8 +221,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ScaredGhost_0: -650423740
-      ScaredGhost_1: -593743269
+      Dead_1: 1646078146
+      Dead_3: 1574405386
+      Dead_0: 2021832579
+      Dead_4: -1859146437
+      Dead_2: 1040877143
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
