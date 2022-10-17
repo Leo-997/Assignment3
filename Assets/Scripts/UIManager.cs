@@ -27,6 +27,9 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    
+    public void QuitGame()
+    {
+        UnityEditor.EditorApplication.isPlaying = false;
+    }
 
 }
