@@ -30,14 +30,6 @@ public class UIManager : MonoBehaviour
     public void QuitGame()
     {
         UnityEditor.EditorApplication.isPlaying = false;
-        SceneManager.LoadScene(1);
     }
-    public void BackToStart()
-    {
-        SceneManager.LoadScene(1);
-    }
-
-
-
 
 }
