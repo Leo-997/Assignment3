@@ -25,22 +25,13 @@ public class UIManager : MonoBehaviour
     public void LoadFirstLevel()
     {
         SceneManager.LoadScene(0);
-        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     public void QuitGame()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        SceneManager.LoadScene(1);
     }
 
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        //Scene Sample = SceneManager.GetSceneByName("SampleScene");
-        //if (Sample.isLoaded == true)
-        //{
-        //    Button but = GameObject.FindGameObjectWithTag("Exit").GetComponent<Button>();
-        //    but.onClick.AddListener(QuitGame);
-        //}
-    }
+    
 
 }
