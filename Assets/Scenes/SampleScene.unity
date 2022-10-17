@@ -6755,7 +6755,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1648589299}
   - component: {fileID: 1648589298}
-  - component: {fileID: 1648589297}
   m_Layer: 0
   m_Name: BMusic
   m_TagString: Untagged
@@ -6763,20 +6762,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1648589297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1648589296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15834c7519e49a742b45d2f8cbbe1a49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BG_NormalState: {fileID: 8300000, guid: 1e10498e5c6d59141be541db3bea88b2, type: 3}
-  BG_Start: {fileID: 8300000, guid: 7177e25edb39c0743aadad2b02fe08d7, type: 3}
 --- !u!82 &1648589298
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6787,11 +6772,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: 1e10498e5c6d59141be541db3bea88b2, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
