@@ -31,5 +31,9 @@ public class UIManager : MonoBehaviour
     {
         UnityEditor.EditorApplication.isPlaying = false;
     }
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(1);
+    }
 
 }
