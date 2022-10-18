@@ -23,46 +23,50 @@ public class PacStudentController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Vector2)pacObj.transform.position == destination)
+        if (pacObj != null && tweener != null)
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if ((Vector2)pacObj.transform.position == destination)
             {
-                destination = new Vector2(pacObj.transform.position.x - 1, pacObj.transform.position.y);
-                tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 1.5f);
-                pacObj.GetComponent<AudioSource>().Play();
-                pacObj.GetComponent<Animator>().SetFloat("X", -1);
-                pacObj.GetComponent<Animator>().SetFloat("Y", 0);
-                PlayerPrefs.SetString("Key_String", "A");
-            }
+                pacObj.GetComponent<AudioSource>().Stop();
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    destination = new Vector2(pacObj.transform.position.x - 1, pacObj.transform.position.y);
+                    tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 1.5f);
+                    pacObj.GetComponent<AudioSource>().Play();
+                    pacObj.GetComponent<Animator>().SetFloat("X", -1);
+                    pacObj.GetComponent<Animator>().SetFloat("Y", 0);
+                    PlayerPrefs.SetString("Key_String", "A");
+                }
 
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                destination = new Vector2(pacObj.transform.position.x + 1, pacObj.transform.position.y);
-                tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 1.5f);
-                pacObj.GetComponent<AudioSource>().Play();
-                pacObj.GetComponent<Animator>().SetFloat("X", 1);
-                pacObj.GetComponent<Animator>().SetFloat("Y", 0);
-                PlayerPrefs.SetString("Key_String", "D");
-            }
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    destination = new Vector2(pacObj.transform.position.x + 1, pacObj.transform.position.y);
+                    tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 1.5f);
+                    pacObj.GetComponent<AudioSource>().Play();
+                    pacObj.GetComponent<Animator>().SetFloat("X", 1);
+                    pacObj.GetComponent<Animator>().SetFloat("Y", 0);
+                    PlayerPrefs.SetString("Key_String", "D");
+                }
 
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                destination = new Vector2(pacObj.transform.position.x, pacObj.transform.position.y + 1);
-                tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 1.5f);
-                pacObj.GetComponent<AudioSource>().Play();
-                pacObj.GetComponent<Animator>().SetFloat("X", 0);
-                pacObj.GetComponent<Animator>().SetFloat("Y", 1);
-                PlayerPrefs.SetString("Key_String", "W");
-            }
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    destination = new Vector2(pacObj.transform.position.x, pacObj.transform.position.y + 1);
+                    tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 1.5f);
+                    pacObj.GetComponent<AudioSource>().Play();
+                    pacObj.GetComponent<Animator>().SetFloat("X", 0);
+                    pacObj.GetComponent<Animator>().SetFloat("Y", 1);
+                    PlayerPrefs.SetString("Key_String", "W");
+                }
 
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                destination = new Vector2(pacObj.transform.position.x, pacObj.transform.position.y - 1);
-                tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 1.5f);
-                pacObj.GetComponent<AudioSource>().Play();
-                pacObj.GetComponent<Animator>().SetFloat("X", 0);
-                pacObj.GetComponent<Animator>().SetFloat("Y", -1);
-                PlayerPrefs.SetString("Key_String", "S");
+                if (Input.GetKeyDown(KeyCode.S))
+                {
+                    destination = new Vector2(pacObj.transform.position.x, pacObj.transform.position.y - 1);
+                    tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 1.5f);
+                    pacObj.GetComponent<AudioSource>().Play();
+                    pacObj.GetComponent<Animator>().SetFloat("X", 0);
+                    pacObj.GetComponent<Animator>().SetFloat("Y", -1);
+                    PlayerPrefs.SetString("Key_String", "S");
+                }
             }
         }
     }
