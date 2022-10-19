@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CherryController : MonoBehaviour
 {
-    private bool creat = false;
+    private bool creatPrefab = false;
     public GameObject prefab;
-    private float gap = 10.0f;
+    private float gapTime = 10.0f;
     public GameObject test;
     public Vector2 newPos;
     private Tweener tweener;
@@ -17,29 +17,24 @@ public class CherryController : MonoBehaviour
     void Update()
     {
 
-        //位置
-        if (creat)
+        if (creatPrefab)
         {
             float x = Random.Range(-27, -35);
             float y = Random.Range(14, -15);
-            
-            Vector3 pos = new Vector2(x, y);
-            //实例化
+            Vector2 pos = new Vector2(x, y);
             test = Instantiate(prefab, pos, Quaternion.identity);
             newPos = new Vector2(-test.transform.position.x, -test.transform.position.y);
-            tweener.AddTween(test.transform, test.transform.position, newPos, 5.0f);
-            creat = false;
+            tweener.AddTween(test.transform, test.transform.position, newPos, 7.0f);
+            creatPrefab = false;
         }
-        //间隔时间
-        if (Time.time > gap)
+        if (Time.time > gapTime)
         {
-            creat = true;
-            gap += 10;
+            creatPrefab = true;
+            gapTime += 10;
 
         }
 
-        //摧毁
-        if (Time.time > gap - 2)
+        if (Time.time > gapTime - 2)
         {
             Destroy(test);
         }
