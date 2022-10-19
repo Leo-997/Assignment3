@@ -55,7 +55,7 @@ public class PacStudentController : MonoBehaviour
                 if (lastInput == "A")
                 {
                     destination = new Vector2(pacObj.transform.position.x - 1, pacObj.transform.position.y);
-                    tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 1.5f);
+                    tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 0.5f);
                     pacObj.GetComponent<AudioSource>().Play();
                     pacObj.GetComponent<Animator>().SetFloat("X", -1);
                     pacObj.GetComponent<Animator>().SetFloat("Y", 0);
@@ -65,7 +65,7 @@ public class PacStudentController : MonoBehaviour
                 if (lastInput == "D")
                 {
                     destination = new Vector2(pacObj.transform.position.x + 1, pacObj.transform.position.y);
-                    tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 1.5f);
+                    tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 0.5f);
                     pacObj.GetComponent<AudioSource>().Play();
                     pacObj.GetComponent<Animator>().SetFloat("X", 1);
                     pacObj.GetComponent<Animator>().SetFloat("Y", 0);
@@ -75,7 +75,7 @@ public class PacStudentController : MonoBehaviour
                 if (lastInput == "W")
                 {
                     destination = new Vector2(pacObj.transform.position.x, pacObj.transform.position.y + 1);
-                    tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 1.5f);
+                    tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 0.5f);
                     pacObj.GetComponent<AudioSource>().Play();
                     pacObj.GetComponent<Animator>().SetFloat("X", 0);
                     pacObj.GetComponent<Animator>().SetFloat("Y", 1);
@@ -85,7 +85,7 @@ public class PacStudentController : MonoBehaviour
                 if (lastInput == "S")
                 {
                     destination = new Vector2(pacObj.transform.position.x, pacObj.transform.position.y - 1);
-                    tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 1.5f);
+                    tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 0.5f);
                     pacObj.GetComponent<AudioSource>().Play();
                     pacObj.GetComponent<Animator>().SetFloat("X", 0);
                     pacObj.GetComponent<Animator>().SetFloat("Y", -1);
