@@ -24,7 +24,7 @@ public class CherryController : MonoBehaviour
             Vector2 pos = new Vector2(x, y);
             test = Instantiate(prefab, pos, Quaternion.identity);
             newPos = new Vector2(-test.transform.position.x, -test.transform.position.y);
-            tweener.AddTween(test.transform, test.transform.position, newPos, 7.0f);
+            tweener.AddTween(test.transform, test.transform.position, newPos, 8.5f);
             creatPrefab = false;
         }
         if (Time.time > gapTime)
@@ -33,10 +33,12 @@ public class CherryController : MonoBehaviour
             gapTime += 10;
 
         }
-
-        if (Time.time > gapTime - 2)
+        if (test)
         {
-            Destroy(test);
+            if (Time.time > gapTime - 1)
+            {
+                Destroy(test);
+            }
         }
 
     }
