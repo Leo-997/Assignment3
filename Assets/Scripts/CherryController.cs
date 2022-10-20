@@ -8,7 +8,7 @@ public class CherryController : MonoBehaviour
     public GameObject prefab;
     private float gapTime = 10.0f;
     public GameObject test;
-    public Vector2 newPos;
+    private Vector2 newPos;
     private Tweener tweener;
     private float localTime;
     private void Start()
