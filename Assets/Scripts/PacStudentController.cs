@@ -12,6 +12,8 @@ public class PacStudentController : MonoBehaviour
     public AudioClip Moving, Wall,Eatting;
     private ParticleSystem stepParticle;
     private ParticleSystem wallParticle;
+    public Transform backDoor;
+    private bool isDoor;
     private void Awake()
     {
         lastInput = PlayerPrefs.GetString("Key_String", "");
@@ -124,6 +126,12 @@ public class PacStudentController : MonoBehaviour
         bool leftCheck = Physics.Raycast(pacObj.transform.position, Vector2.left,out left,1.0f);
         if (leftCheck)
         {
+            if (left.collider.gameObject.tag == "Door")
+            {
+                Debug.Log("进门");
+                isDoor = true;
+            }
+
             if (left.collider.gameObject.tag == "Wall")
             {
                 lastInput = null;
@@ -146,6 +154,11 @@ public class PacStudentController : MonoBehaviour
         bool leftCheck = Physics.Raycast(pacObj.transform.position, Vector2.right, out right, 1.0f);
         if (leftCheck)
         {
+            if (right.collider.gameObject.tag == "Door")
+            {
+                Debug.Log("出门");
+                isDoor = false;
+            }
             if (right.collider.gameObject.tag == "Wall")
             {
                 lastInput = null;
@@ -236,5 +249,13 @@ public class PacStudentController : MonoBehaviour
     {
         pacObj.GetComponent<Animator>().SetFloat("X", 1);
         pacObj.GetComponent<Animator>().SetFloat("Y", 1);
+    }
+
+    void EnterDoor()
+    {
+        if (isDoor)
+        {
+            pacObj.transform.position = backDoor.position;
+        }
     }
 }
