@@ -10,13 +10,15 @@ public class PacStudentController : MonoBehaviour
     string lastInput, currentInput;
     private AudioSource currentClip;
     public AudioClip Moving, Wall,Eatting;
-    private ParticleSystem walkParticle;
+    private ParticleSystem stepParticle;
+    private ParticleSystem wallParticle;
     private void Awake()
     {
         lastInput = PlayerPrefs.GetString("Key_String", "");
         currentInput = lastInput;
         currentClip = pacObj.GetComponent<AudioSource>();
-        walkParticle = pacObj.GetComponentInChildren<ParticleSystem>();
+        stepParticle = GameObject.Find("PacStudent/Step").GetComponent<ParticleSystem>();
+        wallParticle = GameObject.Find("PacStudent/Wall").GetComponent<ParticleSystem>();
     }
     // Start is called before the first frame update
     void Start()
@@ -74,7 +76,7 @@ public class PacStudentController : MonoBehaviour
             tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 0.7f);
             currentClip.clip = Moving;
             currentClip.Play();
-            walkParticle.Play();
+            stepParticle.Play();
             pacObj.GetComponent<Animator>().SetFloat("X", -1);
             pacObj.GetComponent<Animator>().SetFloat("Y", 0);
 
@@ -86,7 +88,7 @@ public class PacStudentController : MonoBehaviour
             tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 0.7f);
             currentClip.clip = Moving;
             currentClip.Play();
-            walkParticle.Play();
+            stepParticle.Play();
             pacObj.GetComponent<Animator>().SetFloat("X", 1);
             pacObj.GetComponent<Animator>().SetFloat("Y", 0);
 
@@ -98,7 +100,7 @@ public class PacStudentController : MonoBehaviour
             tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 0.7f);
             currentClip.clip = Moving;
             currentClip.Play();
-            walkParticle.Play();
+            stepParticle.Play();
             pacObj.GetComponent<Animator>().SetFloat("X", 0);
             pacObj.GetComponent<Animator>().SetFloat("Y", 1);
 
@@ -110,7 +112,7 @@ public class PacStudentController : MonoBehaviour
             tweener.AddTween(pacObj.transform, pacObj.transform.position, destination, 0.7f);
             currentClip.clip = Moving;
             currentClip.Play();
-            walkParticle.Play();
+            stepParticle.Play();
             pacObj.GetComponent<Animator>().SetFloat("X", 0);
             pacObj.GetComponent<Animator>().SetFloat("Y", -1);
 
@@ -128,6 +130,7 @@ public class PacStudentController : MonoBehaviour
                 currentClip.Stop();
                 left.collider.gameObject.GetComponent<AudioSource>().clip = Wall;
                 left.collider.gameObject.GetComponent<AudioSource>().Play();
+                wallParticle.Play();
                 stopAnimation();
             }
             else
@@ -149,6 +152,7 @@ public class PacStudentController : MonoBehaviour
                 currentClip.Stop();
                 right.collider.gameObject.GetComponent<AudioSource>().clip = Wall;
                 right.collider.gameObject.GetComponent<AudioSource>().Play();
+                wallParticle.Play();
                 stopAnimation();
             }
             else
@@ -170,6 +174,7 @@ public class PacStudentController : MonoBehaviour
                 currentClip.Stop();
                 up.collider.gameObject.GetComponent<AudioSource>().clip = Wall;
                 up.collider.gameObject.GetComponent<AudioSource>().Play();
+                wallParticle.Play();
                 stopAnimation();
             }
             else
@@ -191,6 +196,7 @@ public class PacStudentController : MonoBehaviour
                 currentClip.Stop();
                 down.collider.gameObject.GetComponent<AudioSource>().clip = Wall;
                 down.collider.gameObject.GetComponent<AudioSource>().Play();
+                wallParticle.Play();
                 stopAnimation();
             }
             else
