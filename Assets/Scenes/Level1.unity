@@ -183,7 +183,6 @@ MonoBehaviour:
   Moving: {fileID: 8300000, guid: 75af173ea0b6b734087806b43bb1ad01, type: 3}
   Wall: {fileID: 8300000, guid: 191fb4a531a676e49b823ce9ed213c25, type: 3}
   Eatting: {fileID: 8300000, guid: c204faa603a9e6846abe2de5194aa3ef, type: 3}
-  backDoor: {fileID: 727963610}
 --- !u!4 &7638518
 Transform:
   m_ObjectHideFlags: 0
@@ -13477,6 +13476,7 @@ GameObject:
   - component: {fileID: 1012404134}
   - component: {fileID: 1012404136}
   - component: {fileID: 1012404135}
+  - component: {fileID: 1012404137}
   m_Layer: 0
   m_Name: PacStudent
   m_TagString: PacStudent
@@ -13720,6 +13720,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1012404137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012404129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d334dc00461b634fba100c82b3e299d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backDoor: {fileID: 727963610}
 --- !u!1 &1045410381
 GameObject:
   m_ObjectHideFlags: 0
@@ -18716,7 +18729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d334dc00461b634fba100c82b3e299d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backDoor: {fileID: 0}
+  backDoor: {fileID: 727963610}
 --- !u!65 &1913852945
 BoxCollider:
   m_ObjectHideFlags: 0

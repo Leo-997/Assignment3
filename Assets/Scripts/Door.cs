@@ -19,22 +19,40 @@ public class Door : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)
+    public void leftDoor()
     {
-        Debug.Log("进了");
-        isDoor = true;
-        if (other.gameObject.CompareTag("PacStudent"))
+        RaycastHit left;
+        bool leftCheck = Physics.Raycast(pacStudent.transform.position, Vector2.left, out left, 1.0f);
+        if (left.collider.gameObject.tag == "Door")
         {
             Debug.Log("进了");
             isDoor = true;
         }
     }
-    void OnTriggerExit(Collider other)
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    Debug.Log("进了");
+    //    isDoor = true;
+    //    if (other.gameObject.CompareTag("PacStudent"))
+    //    {
+    //        Debug.Log("进了");
+    //        isDoor = true;
+    //    }
+    //}
+    //void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("PacStudent"))
+    //    {
+    //        Debug.Log("出了");
+    //        isDoor = false;
+    //    }
+    //}
+
+    void EnterDoor()
     {
-        if (other.gameObject.CompareTag("PacStudent"))
+        if (isDoor)
         {
-            Debug.Log("出了");
-            isDoor = false;
+            pacStudent.transform.position = backDoor.position;
         }
     }
 }
